@@ -30,13 +30,10 @@ class ScenarioTest {
 
     @Test
     fun caseNumberOne() {
-        val gamePage = GamePage(
-            imageButtonDescription = "tree",
-            buttonText = "pick",
-        )
+        val gamePage = GamePage()
         gamePage.checkStateIsTree() // Is Tree
 
-        gamePage.clickButton()
+        gamePage.clickActionButton()
         gamePage.checkStateIsLemonBefore() // Is Lemon Before
 
         gamePage.clickImageButton() // 1
@@ -58,7 +55,7 @@ class ScenarioTest {
         gamePage.checkStateIsJuice() // IsJuice
 
         gamePage.clickImageButton()
-        gamePage.checkStateIsAgain() // IsAgain
+        gamePage.checkStateIsFinish() // IsAgain
 
         gamePage.clickImageButton()
         gamePage.checkStateIsTree() // IsTree
