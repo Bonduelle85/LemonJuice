@@ -1,9 +1,13 @@
 package com.example.lemonjuice
 
 import android.view.View
+import android.view.ViewManager
 import android.widget.TextView
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.ViewAssertion
+import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
@@ -22,7 +26,7 @@ class HintTextViewUi(
     private val hintTextJuice: Int = R.string.click_drink
     private val hintTextFinish: Int = R.string.click_again
 
-    private val viewInteraction = onView( Matchers.allOf(
+    private val viewInteraction = onView(Matchers.allOf(
         withId(R.id.hintTextView),
         isAssignableFrom(TextView::class.java),
         parent,

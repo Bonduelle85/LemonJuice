@@ -12,7 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
-import org.hamcrest.core.IsNot.not
+
 
 class ActionImageButtonUi(
     private val rootId: Int,
@@ -35,32 +35,32 @@ class ActionImageButtonUi(
 
     fun checkStateIsTree() {
         viewInteraction.check(matches(withContentDescription(contentDescriptionTree)))
-            .check(matches(DrawableMatcher(R.drawable.ic_tree)))
-            .check(matches(not(isClickable())))
+            .check(matches(DrawableMatcher(R.drawable.tree)))
+            .check(matches(Matchers.not(isClickable())))
     }
 
     fun checkStateIsLemonBefore() {
         viewInteraction.check(matches(withContentDescription(contentDescriptionLemon)))
             .check(matches(DrawableMatcher(R.drawable.ic_lemon)))
-            .check(matches(not(isClickable())))
+            .check(matches(Matchers.not(isClickable())))
     }
 
     fun checkStateIsLemonAfter() {
         viewInteraction.check(matches(withContentDescription(contentDescriptionLemon)))
             .check(matches(DrawableMatcher(R.drawable.ic_lemon)))
-            .check(matches(not(isClickable())))
+            .check(matches(Matchers.not(isClickable())))
     }
 
     fun checkStateIsJuice() {
         viewInteraction.check(matches(withContentDescription(contentDescriptionJuice)))
-            .check(matches(DrawableMatcher(R.drawable.ic_lemon)))
-            .check(matches(not(isClickable())))
+            .check(matches(DrawableMatcher(R.drawable.ic_juice)))
+            .check(matches(Matchers.not(isClickable())))
     }
 
     fun checkStateIsFinish() {
         viewInteraction.check(matches(withContentDescription(contentDescriptionEmptyGlass)))
-            .check(matches(DrawableMatcher(R.drawable.ic_lemon)))
-            .check(matches(not(isClickable())))
+            .check(matches(DrawableMatcher(R.drawable.ic_empty_glass)))
+            .check(matches(Matchers.not(isClickable())))
     }
 
     fun clickImageButton() {

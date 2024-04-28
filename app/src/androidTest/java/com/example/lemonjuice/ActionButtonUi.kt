@@ -32,26 +32,31 @@ class ActionButtonUi(
     fun checkStateIsTree() {
         viewInteraction.check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textPick)))
+            .check(matches(ViewMatchers.isEnabled()))
     }
 
     fun checkStateIsLemonBefore() {
         viewInteraction.check(matches(ViewMatchers.isNotClickable()))
             .check(matches(ViewMatchers.withText(textSqueeze)))
+            .check(matches(Matchers.not(ViewMatchers.isEnabled())))
     }
 
     fun checkStateIsLemonAfter() {
         viewInteraction.check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textSqueeze)))
+            .check(matches(ViewMatchers.isEnabled()))
     }
 
     fun checkStateIsJuice() {
         viewInteraction.check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textDrink)))
+            .check(matches(ViewMatchers.isEnabled()))
     }
 
     fun checkStateIsFinish() {
         viewInteraction.check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textAgain)))
+            .check(matches(ViewMatchers.isEnabled()))
     }
 
     fun clickActionButton() {

@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">LemonJuice</string>
+
+    <!--Image Button Description-->
+    <string name="tree">tree</string>
+    <string name="lemon">lemon</string>
+    <string name="juice">juice</string>
+    <string name="empty_glass">empty glass</string>
+
+    <!--Action Button Text-->
+    <string name="pick">Pick</string>
+    <string name="squeeze">Squeeze</string>
+    <string name="drink">Drink</string>
+    <string name="again">Again</string>
+
+    <!--Hint Text-->
+    <string name="click_pick">click pick</string>
+    <string name="click_lemon_5_times">click lemon 5 times</string>
+    <string name="click_squeeze">click squeeze</string>
+    <string name="click_drink">click drink</string>
+    <string name="click_again">click again</string>
 </resources>
