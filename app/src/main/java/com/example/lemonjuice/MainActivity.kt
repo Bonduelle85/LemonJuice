@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.imageButton.setOnClickListener {
-            uiState = viewModel.clickImageButton()
+            uiState = viewModel.handleImageButton()
             uiState.update(binding)
         }
 

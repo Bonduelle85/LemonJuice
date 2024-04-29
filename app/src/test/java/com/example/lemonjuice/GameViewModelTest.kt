@@ -37,7 +37,7 @@ class GameViewModelTest {
         assertEquals(expectedUiState, actualUiState)
 
 
-        actualUiState = viewModel.clickImageButton() // 1 LemonBefore
+        actualUiState = viewModel.handleImageButton() // 1 LemonBefore
         expectedUiState = UiState.LemonBefore(
             imageButtonUiState = ImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
@@ -45,7 +45,7 @@ class GameViewModelTest {
         )
         assertEquals(expectedUiState, actualUiState)
 
-        actualUiState = viewModel.clickImageButton() // 2 LemonBefore
+        actualUiState = viewModel.handleImageButton() // 2 LemonBefore
         expectedUiState = UiState.LemonBefore(
             imageButtonUiState = ImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
@@ -53,7 +53,7 @@ class GameViewModelTest {
         )
         assertEquals(expectedUiState, actualUiState)
 
-        actualUiState = viewModel.clickImageButton() // 3 LemonBefore
+        actualUiState = viewModel.handleImageButton() // 3 LemonBefore
         expectedUiState = UiState.LemonBefore(
             imageButtonUiState = ImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
@@ -61,7 +61,7 @@ class GameViewModelTest {
         )
         assertEquals(expectedUiState, actualUiState)
 
-        actualUiState = viewModel.clickImageButton() // 4 LemonBefore
+        actualUiState = viewModel.handleImageButton() // 4 LemonBefore
         expectedUiState = UiState.LemonBefore(
             imageButtonUiState = ImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
@@ -69,7 +69,7 @@ class GameViewModelTest {
         )
         assertEquals(expectedUiState, actualUiState)
 
-        actualUiState = viewModel.clickImageButton() // 5 LemonAfter
+        actualUiState = viewModel.handleImageButton() // 5 LemonAfter
         expectedUiState = UiState.LemonAfter(
             imageButtonUiState = ImageButtonUiState.LemonAfter,
             actionButtonUiState = ActionButtonUiState.LemonAfter,
@@ -114,6 +114,5 @@ private class FakeRepository : Repository {
     override fun reset() {
         clickCounter = 0
     }
-
     override fun getCounter() = clickCounter
 }

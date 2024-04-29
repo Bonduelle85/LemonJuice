@@ -10,7 +10,7 @@ class GamePage {
     private val parent =
         withParent(isAssignableFrom(LinearLayout::class.java))
 
-    private val actionImageButtonUi = ActionImageButtonUi(rootId, parent)
+    private val actionImageButtonUi = ImageButtonUi(rootId, parent)
     private val actionButtonUi = ActionButtonUi(rootId, parent)
     private val hintTextViewUi = HintTextViewUi(rootId, parent)
 

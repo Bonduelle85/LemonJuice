@@ -14,7 +14,7 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
 
-class ActionImageButtonUi(
+class ImageButtonUi(
     private val rootId: Int,
     private val parent: Matcher<View>
 ) {
