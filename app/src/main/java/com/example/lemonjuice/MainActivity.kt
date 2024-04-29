@@ -10,19 +10,20 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val viewModel = GameViewModel()
+        lateinit var uiState: UiState
+        val viewModel = GameViewModel(Repository.Base())
 
         binding.actionButton.setOnClickListener {
-            val uiState: UiState = viewModel.nextStep()
+            uiState = uiState.handleAction(viewModel)
             uiState.update(binding)
         }
 
-        binding.actionImageButton.setOnClickListener {
-            val uiState: UiState = viewModel.squeeze()
+        binding.imageButton.setOnClickListener {
+            uiState = viewModel.clickImageButton()
             uiState.update(binding)
         }
 
-        val uiState: UiState = viewModel.init()
+        uiState = viewModel.init()
         uiState.update(binding)
     }
 }
