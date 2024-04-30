@@ -32,32 +32,52 @@ class ScenarioTest {
     fun testCase() {
         val gamePage = GamePage()
         gamePage.checkStateIsTree()
+        activityScenarioRule.scenario.recreate()
+        gamePage.checkStateIsTree()
 
         gamePage.clickActionButton()
         gamePage.checkStateIsLemonBefore()
-
-        gamePage.clickImageButton()
+        activityScenarioRule.scenario.recreate()
         gamePage.checkStateIsLemonBefore()
 
         gamePage.clickImageButton()
         gamePage.checkStateIsLemonBefore()
-
-        gamePage.clickImageButton()
+        activityScenarioRule.scenario.recreate()
         gamePage.checkStateIsLemonBefore()
 
         gamePage.clickImageButton()
+        gamePage.checkStateIsLemonBefore()
+        activityScenarioRule.scenario.recreate()
+        gamePage.checkStateIsLemonBefore()
+
+        gamePage.clickImageButton()
+        gamePage.checkStateIsLemonBefore()
+        activityScenarioRule.scenario.recreate()
+        gamePage.checkStateIsLemonBefore()
+
+        gamePage.clickImageButton()
+        gamePage.checkStateIsLemonBefore()
+        activityScenarioRule.scenario.recreate()
         gamePage.checkStateIsLemonBefore()
 
         gamePage.clickImageButton()
         gamePage.checkStateIsLemonAfter()
+        activityScenarioRule.scenario.recreate()
+        gamePage.checkStateIsLemonAfter()
 
         gamePage.clickActionButton()
+        gamePage.checkStateIsJuice()
+        activityScenarioRule.scenario.recreate()
         gamePage.checkStateIsJuice()
 
         gamePage.clickActionButton()
         gamePage.checkStateIsFinish()
+        activityScenarioRule.scenario.recreate()
+        gamePage.checkStateIsFinish()
 
         gamePage.clickActionButton()
+        gamePage.checkStateIsTree()
+        activityScenarioRule.scenario.recreate()
         gamePage.checkStateIsTree()
     }
 }

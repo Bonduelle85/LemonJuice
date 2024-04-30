@@ -17,6 +17,8 @@ class ActionButton : AppCompatButton {
         defStyleAttrs
     )
 
+    fun handleAction(viewModel: Actions): UiState = uiState.handleAction(viewModel)
+
     fun updateUiState(outer: ActionButtonUiState) {
         uiState = outer
         uiState.show(this)
