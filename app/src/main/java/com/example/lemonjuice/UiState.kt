@@ -1,8 +1,9 @@
 package com.example.lemonjuice
 
 import com.example.lemonjuice.databinding.ActivityMainBinding
+import java.io.Serializable
 
-interface UiState {
+interface UiState : Serializable {
 
     fun update(binding: ActivityMainBinding)
     fun handleAction(viewModel: Actions): UiState
