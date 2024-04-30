@@ -1,13 +1,9 @@
 package com.example.lemonjuice
 
 import android.view.View
-import android.view.ViewManager
 import android.widget.TextView
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.ViewAssertion
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
@@ -16,12 +12,12 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
 class HintTextViewUi(
-    private val rootId: Int,
-    private val parent: Matcher<View>,
+    rootId: Int,
+    parent: Matcher<View>,
 ) {
 
     private val hintTextTree: Int = R.string.click_pick
-    private val hintTextLemonBefore:Int = R.string.click_lemon_5_times
+    private val hintTextLemonBefore:Int = R.string.click_lemon
     private val hintTextLemonAfter:Int = R.string.click_squeeze
     private val hintTextJuice: Int = R.string.click_drink
     private val hintTextFinish: Int = R.string.click_again
@@ -34,7 +30,8 @@ class HintTextViewUi(
     ))
 
     fun checkStateIsTree() {
-        viewInteraction.check(matches(withText(hintTextTree)))
+        viewInteraction
+            .check(matches(withText(hintTextTree)))
     }
 
     fun checkStateIsLemonBefore() {
@@ -46,10 +43,12 @@ class HintTextViewUi(
     }
 
     fun checkStateIsJuice() {
-        viewInteraction.check(matches(withText(hintTextJuice)))
+        viewInteraction
+            .check(matches(withText(hintTextJuice)))
     }
 
     fun checkStateIsFinish() {
-        viewInteraction.check(matches(withText(hintTextFinish)))
+        viewInteraction
+            .check(matches(withText(hintTextFinish)))
     }
 }

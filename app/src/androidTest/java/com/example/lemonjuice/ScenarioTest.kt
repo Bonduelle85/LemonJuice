@@ -29,35 +29,35 @@ class ScenarioTest {
      * */
 
     @Test
-    fun caseNumberOne() {
+    fun testCase() {
         val gamePage = GamePage()
-        gamePage.checkStateIsTree() // Is Tree
+        gamePage.checkStateIsTree()
 
         gamePage.clickActionButton()
-        gamePage.checkStateIsLemonBefore() // Is Lemon Before
-
-        gamePage.clickImageButton() // 1
         gamePage.checkStateIsLemonBefore()
-
-        gamePage.clickImageButton() // 2
-        gamePage.checkStateIsLemonBefore()
-
-        gamePage.clickImageButton() // 3
-        gamePage.checkStateIsLemonBefore()
-
-        gamePage.clickImageButton() // 4
-        gamePage.checkStateIsLemonBefore()
-
-        gamePage.clickImageButton() // 5
-        gamePage.checkStateIsLemonAfter() // Is Lemon After
 
         gamePage.clickImageButton()
-        gamePage.checkStateIsJuice() // IsJuice
+        gamePage.checkStateIsLemonBefore()
 
         gamePage.clickImageButton()
-        gamePage.checkStateIsFinish() // IsAgain
+        gamePage.checkStateIsLemonBefore()
 
         gamePage.clickImageButton()
-        gamePage.checkStateIsTree() // IsTree
+        gamePage.checkStateIsLemonBefore()
+
+        gamePage.clickImageButton()
+        gamePage.checkStateIsLemonBefore()
+
+        gamePage.clickImageButton()
+        gamePage.checkStateIsLemonAfter()
+
+        gamePage.clickActionButton()
+        gamePage.checkStateIsJuice()
+
+        gamePage.clickActionButton()
+        gamePage.checkStateIsFinish()
+
+        gamePage.clickActionButton()
+        gamePage.checkStateIsTree()
     }
 }

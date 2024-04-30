@@ -8,14 +8,14 @@
     <string name="empty_glass">empty glass</string>
 
     <!--Action Button Text-->
-    <string name="pick">Pick</string>
-    <string name="squeeze">Squeeze</string>
-    <string name="drink">Drink</string>
-    <string name="again">Again</string>
+    <string name="pick">pick</string>
+    <string name="squeeze">squeeze</string>
+    <string name="drink">drink</string>
+    <string name="again">again</string>
 
     <!--Hint Text-->
     <string name="click_pick">click pick</string>
-    <string name="click_lemon_5_times">click lemon 5 times</string>
+    <string name="click_lemon">click lemon picture</string>
     <string name="click_squeeze">click squeeze</string>
     <string name="click_drink">click drink</string>
     <string name="click_again">click again</string>

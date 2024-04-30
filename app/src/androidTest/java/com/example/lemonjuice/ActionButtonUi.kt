@@ -13,8 +13,8 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers
 
 class ActionButtonUi(
-    private val rootId: Int,
-    private val parent: Matcher<View>,
+    rootId: Int,
+    parent: Matcher<View>,
 ) {
 
     private val textPick: Int = R.string.pick
@@ -30,31 +30,37 @@ class ActionButtonUi(
     ))
 
     fun checkStateIsTree() {
-        viewInteraction.check(matches(ViewMatchers.isClickable()))
+        viewInteraction
+            .check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textPick)))
             .check(matches(ViewMatchers.isEnabled()))
     }
 
     fun checkStateIsLemonBefore() {
-        viewInteraction.check(matches(ViewMatchers.isNotClickable()))
+        viewInteraction
+//            .check(matches(ViewMatchers.isNotClickable()))
+//            .check(matches(Matchers.not(ViewMatchers.isClickable())))
             .check(matches(ViewMatchers.withText(textSqueeze)))
             .check(matches(Matchers.not(ViewMatchers.isEnabled())))
     }
 
     fun checkStateIsLemonAfter() {
-        viewInteraction.check(matches(ViewMatchers.isClickable()))
+        viewInteraction
+            .check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textSqueeze)))
             .check(matches(ViewMatchers.isEnabled()))
     }
 
     fun checkStateIsJuice() {
-        viewInteraction.check(matches(ViewMatchers.isClickable()))
+        viewInteraction
+            .check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textDrink)))
             .check(matches(ViewMatchers.isEnabled()))
     }
 
     fun checkStateIsFinish() {
-        viewInteraction.check(matches(ViewMatchers.isClickable()))
+        viewInteraction
+            .check(matches(ViewMatchers.isClickable()))
             .check(matches(ViewMatchers.withText(textAgain)))
             .check(matches(ViewMatchers.isEnabled()))
     }

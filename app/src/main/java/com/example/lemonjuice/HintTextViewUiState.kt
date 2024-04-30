@@ -14,7 +14,7 @@ interface HintTextViewUiState {
 
     object LemonBefore: HintTextViewUiState {
         override fun show(textView: TextView) {
-            textView.setText(R.string.click_lemon_5_times)
+            textView.setText(R.string.click_lemon)
         }
     }
 
