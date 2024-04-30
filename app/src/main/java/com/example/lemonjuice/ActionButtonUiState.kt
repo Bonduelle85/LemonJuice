@@ -1,8 +1,9 @@
 package com.example.lemonjuice
 
 import androidx.appcompat.widget.AppCompatButton
+import java.io.Serializable
 
-interface ActionButtonUiState {
+interface ActionButtonUiState : Serializable {
 
     fun show(actionButton: AppCompatButton)
 

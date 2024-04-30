@@ -7,7 +7,6 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom
 import androidx.test.espresso.matcher.ViewMatchers.isClickable
-import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
 import org.hamcrest.Matcher
@@ -26,7 +25,7 @@ class ImageButtonUi(
 
     private val viewInteraction = onView(
         Matchers.allOf(
-            withId(R.id.imageButton),
+            withId(R.id.actionImageButton),
             isAssignableFrom(ImageButton::class.java),
             parent,
             withParent(withId(rootId)),

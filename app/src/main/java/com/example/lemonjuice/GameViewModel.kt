@@ -6,7 +6,7 @@ class GameViewModel(
 
     fun init(): UiState {
         return UiState.Tree(
-            imageButtonUiState = ImageButtonUiState.Tree,
+            actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
             hintTextView = HintTextViewUiState.Tree,
         )
@@ -16,13 +16,13 @@ class GameViewModel(
         repository.increment()
         return if (repository.isLast()) {
             UiState.LemonAfter(
-                imageButtonUiState = ImageButtonUiState.LemonAfter,
+                actionImageButtonUiState = ActionImageButtonUiState.LemonAfter,
                 actionButtonUiState = ActionButtonUiState.LemonAfter,
                 hintTextView = HintTextViewUiState.LemonAfter,
             )
         } else {
             UiState.LemonBefore(
-                imageButtonUiState = ImageButtonUiState.LemonBefore,
+                actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
                 actionButtonUiState = ActionButtonUiState.LemonBefore,
                 hintTextView = HintTextViewUiState.LemonBefore,
             )
@@ -31,7 +31,7 @@ class GameViewModel(
 
     override fun goLemonBefore(): UiState {
         return UiState.LemonBefore(
-            imageButtonUiState = ImageButtonUiState.LemonBefore,
+            actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextView = HintTextViewUiState.LemonBefore,
         )
@@ -39,7 +39,7 @@ class GameViewModel(
 
     override fun goToJuice(): UiState {
         return UiState.Juice(
-            imageButtonUiState = ImageButtonUiState.Juice,
+            actionImageButtonUiState = ActionImageButtonUiState.Juice,
             actionButtonUiState = ActionButtonUiState.Juice,
             hintTextView = HintTextViewUiState.Juice,
         )
@@ -47,7 +47,7 @@ class GameViewModel(
 
     override fun goToGlass(): UiState {
         return UiState.Glass(
-            imageButtonUiState = ImageButtonUiState.Glass,
+            actionImageButtonUiState = ActionImageButtonUiState.Glass,
             actionButtonUiState = ActionButtonUiState.Glass,
             hintTextView = HintTextViewUiState.Glass,
         )

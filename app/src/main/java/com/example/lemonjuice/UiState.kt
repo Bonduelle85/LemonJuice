@@ -10,13 +10,13 @@ interface UiState : Serializable {
 
 
     data class Tree(
-        private val imageButtonUiState: ImageButtonUiState,
+        private val actionImageButtonUiState: ActionImageButtonUiState,
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
         override fun update(binding: ActivityMainBinding) {
-            imageButtonUiState.show(binding.imageButton)
-            actionButtonUiState.show(binding.actionButton)
+            binding.actionImageButton.updateUiState(actionImageButtonUiState)
+            binding.actionButton.updateUiState(actionButtonUiState)
             hintTextView.show(binding.hintTextView)
         }
 
@@ -26,13 +26,13 @@ interface UiState : Serializable {
     }
 
     data class LemonBefore(
-        private val imageButtonUiState: ImageButtonUiState,
+        private val actionImageButtonUiState: ActionImageButtonUiState,
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
         override fun update(binding: ActivityMainBinding) {
-            imageButtonUiState.show(binding.imageButton)
-            actionButtonUiState.show(binding.actionButton)
+            binding.actionImageButton.updateUiState(actionImageButtonUiState)
+            binding.actionButton.updateUiState(actionButtonUiState)
             hintTextView.show(binding.hintTextView)
         }
 
@@ -40,13 +40,13 @@ interface UiState : Serializable {
     }
 
     data class LemonAfter(
-        private val imageButtonUiState: ImageButtonUiState,
+        private val actionImageButtonUiState: ActionImageButtonUiState,
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
         override fun update(binding: ActivityMainBinding) {
-            imageButtonUiState.show(binding.imageButton)
-            actionButtonUiState.show(binding.actionButton)
+            binding.actionImageButton.updateUiState(actionImageButtonUiState)
+            binding.actionButton.updateUiState(actionButtonUiState)
             hintTextView.show(binding.hintTextView)
         }
 
@@ -56,13 +56,13 @@ interface UiState : Serializable {
     }
 
     data class Juice(
-        private val imageButtonUiState: ImageButtonUiState,
+        private val actionImageButtonUiState: ActionImageButtonUiState,
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
         override fun update(binding: ActivityMainBinding) {
-            imageButtonUiState.show(binding.imageButton)
-            actionButtonUiState.show(binding.actionButton)
+            binding.actionImageButton.updateUiState(actionImageButtonUiState)
+            binding.actionButton.updateUiState(actionButtonUiState)
             hintTextView.show(binding.hintTextView)
         }
 
@@ -72,13 +72,13 @@ interface UiState : Serializable {
     }
 
     data class Glass(
-        private val imageButtonUiState: ImageButtonUiState,
+        private val actionImageButtonUiState: ActionImageButtonUiState,
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
         override fun update(binding: ActivityMainBinding) {
-            imageButtonUiState.show(binding.imageButton)
-            actionButtonUiState.show(binding.actionButton)
+            binding.actionImageButton.updateUiState(actionImageButtonUiState)
+            binding.actionButton.updateUiState(actionButtonUiState)
             hintTextView.show(binding.hintTextView)
         }
 

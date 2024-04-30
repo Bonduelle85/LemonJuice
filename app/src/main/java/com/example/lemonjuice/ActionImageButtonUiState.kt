@@ -1,40 +1,41 @@
 package com.example.lemonjuice
 
 import android.widget.ImageButton
+import java.io.Serializable
 
-interface ImageButtonUiState {
+interface ActionImageButtonUiState : Serializable {
 
     fun show(imageButton: ImageButton)
 
-    object Tree: ImageButtonUiState {
+    object Tree: ActionImageButtonUiState {
         override fun show(imageButton: ImageButton) {
             imageButton.setImageResource(R.drawable.tree)
             imageButton.isClickable = false
         }
     }
 
-    object LemonBefore: ImageButtonUiState {
+    object LemonBefore: ActionImageButtonUiState {
         override fun show(imageButton: ImageButton) {
             imageButton.setImageResource(R.drawable.ic_lemon)
             imageButton.isClickable = true
         }
     }
 
-    object LemonAfter: ImageButtonUiState {
+    object LemonAfter: ActionImageButtonUiState {
         override fun show(imageButton: ImageButton) {
             imageButton.setImageResource(R.drawable.ic_lemon)
             imageButton.isClickable = false
         }
     }
 
-    object Juice: ImageButtonUiState {
+    object Juice: ActionImageButtonUiState {
         override fun show(imageButton: ImageButton) {
             imageButton.setImageResource(R.drawable.ic_juice)
             imageButton.isClickable = false
         }
     }
 
-    object Glass: ImageButtonUiState {
+    object Glass: ActionImageButtonUiState {
         override fun show(imageButton: ImageButton) {
             imageButton.setImageResource(R.drawable.ic_empty_glass)
             imageButton.isClickable = false

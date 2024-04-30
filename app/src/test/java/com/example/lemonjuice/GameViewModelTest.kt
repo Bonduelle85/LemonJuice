@@ -22,7 +22,7 @@ class GameViewModelTest {
     fun case() {
         var actualUiState: UiState = viewModel.init() // Tree
         var expectedUiState: UiState = UiState.Tree(
-            imageButtonUiState = ImageButtonUiState.Tree,
+            actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
             hintTextView = HintTextViewUiState.Tree,
         )
@@ -30,7 +30,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.goLemonBefore()
         expectedUiState = UiState.LemonBefore(
-            imageButtonUiState = ImageButtonUiState.LemonBefore,
+            actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextView = HintTextViewUiState.LemonBefore,
         )
@@ -39,7 +39,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.handleImageButton() // 1 LemonBefore
         expectedUiState = UiState.LemonBefore(
-            imageButtonUiState = ImageButtonUiState.LemonBefore,
+            actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextView = HintTextViewUiState.LemonBefore,
         )
@@ -47,7 +47,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.handleImageButton() // 2 LemonBefore
         expectedUiState = UiState.LemonBefore(
-            imageButtonUiState = ImageButtonUiState.LemonBefore,
+            actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextView = HintTextViewUiState.LemonBefore,
         )
@@ -55,7 +55,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.handleImageButton() // 3 LemonBefore
         expectedUiState = UiState.LemonBefore(
-            imageButtonUiState = ImageButtonUiState.LemonBefore,
+            actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextView = HintTextViewUiState.LemonBefore,
         )
@@ -63,7 +63,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.handleImageButton() // 4 LemonBefore
         expectedUiState = UiState.LemonBefore(
-            imageButtonUiState = ImageButtonUiState.LemonBefore,
+            actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextView = HintTextViewUiState.LemonBefore,
         )
@@ -71,7 +71,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.handleImageButton() // 5 LemonAfter
         expectedUiState = UiState.LemonAfter(
-            imageButtonUiState = ImageButtonUiState.LemonAfter,
+            actionImageButtonUiState = ActionImageButtonUiState.LemonAfter,
             actionButtonUiState = ActionButtonUiState.LemonAfter,
             hintTextView = HintTextViewUiState.LemonAfter,
         )
@@ -79,7 +79,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.goToJuice() // Juice
         expectedUiState = UiState.Juice(
-            imageButtonUiState = ImageButtonUiState.Juice,
+            actionImageButtonUiState = ActionImageButtonUiState.Juice,
             actionButtonUiState = ActionButtonUiState.Juice,
             hintTextView = HintTextViewUiState.Juice,
         )
@@ -87,7 +87,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.goToGlass() // Glass
         expectedUiState = UiState.Glass(
-            imageButtonUiState = ImageButtonUiState.Glass,
+            actionImageButtonUiState = ActionImageButtonUiState.Glass,
             actionButtonUiState = ActionButtonUiState.Glass,
             hintTextView = HintTextViewUiState.Glass,
         )
@@ -95,7 +95,7 @@ class GameViewModelTest {
 
         actualUiState = viewModel.goAgain() // Tree
         expectedUiState = UiState.Tree(
-            imageButtonUiState = ImageButtonUiState.Tree,
+            actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
             hintTextView = HintTextViewUiState.Tree,
         )

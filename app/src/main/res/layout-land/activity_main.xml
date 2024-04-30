@@ -9,14 +9,14 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton"
+    <com.example.lemonjuice.ActionImageButton
+        android:id="@+id/actionImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:src="@drawable/tree"
         tools:contentDescription="@string/tree"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.example.lemonjuice.ActionButton
         android:id="@+id/actionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -20,13 +20,15 @@ class MainActivity : AppCompatActivity() {
             uiState.update(binding)
         }
 
-        binding.imageButton.setOnClickListener {
+        binding.actionImageButton.setOnClickListener {
             uiState = viewModel.handleImageButton()
             uiState.update(binding)
         }
 
         uiState = if (savedInstanceState == null) {
-            viewModel.init()
+            viewModel.init().also { uiState ->
+                uiState.update(binding)
+            }
         } else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 savedInstanceState.getSerializable(KEY, UiState::class.java) as UiState
@@ -34,7 +36,6 @@ class MainActivity : AppCompatActivity() {
                 savedInstanceState.getSerializable(KEY) as UiState
             }
         }
-        uiState.update(binding)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
