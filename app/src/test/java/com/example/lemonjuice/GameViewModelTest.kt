@@ -114,5 +114,4 @@ private class FakeRepository : Repository {
     override fun reset() {
         clickCounter = 0
     }
-    override fun getCounter() = clickCounter
 }

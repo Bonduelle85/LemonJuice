@@ -5,22 +5,21 @@ interface Repository {
     fun increment()
     fun isLast(): Boolean
     fun reset()
-    fun getCounter(): Int
 
     class Base(
-        private var counter: Int = 0,
+        private var counter: IntCache,
     ) : Repository {
 
         override fun increment() {
-            counter++
+            val old = counter.read()
+            val new = old + 1
+            counter.save(new)
         }
 
-        override fun isLast() = counter == 5
+        override fun isLast() = counter.read() == 5
 
         override fun reset() {
-            counter = 0
+            counter.save(0)
         }
-
-        override fun getCounter() = counter
     }
 }
