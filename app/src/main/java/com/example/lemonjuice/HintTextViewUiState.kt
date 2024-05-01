@@ -1,38 +1,26 @@
 package com.example.lemonjuice
 
-import android.widget.TextView
+import androidx.annotation.StringRes
 
 interface HintTextViewUiState {
 
-    fun show(textView: TextView)
+    fun show(textView: UpdateText)
 
-    object Tree: HintTextViewUiState {
-        override fun show(textView: TextView) {
-            textView.setText(R.string.click_pick)
+    abstract class Abstract(
+        @StringRes private val resId: Int
+    ) : HintTextViewUiState {
+        override fun show(textView: UpdateText) {
+            textView.updateText(resId)
         }
     }
 
-    object LemonBefore: HintTextViewUiState {
-        override fun show(textView: TextView) {
-            textView.setText(R.string.click_lemon)
-        }
-    }
+    object Tree: Abstract(R.string.click_pick)
 
-    object LemonAfter: HintTextViewUiState {
-        override fun show(textView: TextView) {
-            textView.setText(R.string.click_squeeze)
-        }
-    }
+    object LemonBefore: Abstract(R.string.click_lemon)
 
-    object Juice: HintTextViewUiState {
-        override fun show(textView: TextView) {
-            textView.setText(R.string.click_drink)
-        }
-    }
+    object LemonAfter: Abstract(R.string.click_squeeze)
 
-    object Glass: HintTextViewUiState{
-        override fun show(textView: TextView) {
-            textView.setText(R.string.click_again)
-        }
-    }
+    object Juice: Abstract(R.string.click_drink)
+
+    object Glass: Abstract(R.string.click_again)
 }

@@ -1,26 +1,35 @@
 package com.example.lemonjuice
 
-import com.example.lemonjuice.databinding.ActivityMainBinding
 
 interface UiState {
 
-    fun update(binding: ActivityMainBinding)
-    fun handleAction(viewModel: Actions): UiState
+    fun update(
+        actionImageButton: UpdateImage,
+        actionButton: UpdateButton,
+        hintTextView: UpdateText,
+    )
 
+    object Empty : UiState {
+        override fun update(
+            actionImageButton: UpdateImage,
+            actionButton: UpdateButton,
+            hintTextView: UpdateText
+        ) = Unit
+    }
 
     data class Tree(
         private val actionImageButtonUiState: ActionImageButtonUiState,
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
-        override fun update(binding: ActivityMainBinding) {
-            binding.actionImageButton.updateUiState(actionImageButtonUiState)
-            binding.actionButton.updateUiState(actionButtonUiState)
-            hintTextView.show(binding.hintTextView)
-        }
-
-        override fun handleAction(viewModel: Actions): UiState {
-            return viewModel.goLemonBefore()
+        override fun update(
+            actionImageButton: UpdateImage,
+            actionButton: UpdateButton,
+            hintTextView: UpdateText,
+        ) {
+            actionImageButton.updateUiState(actionImageButtonUiState)
+            actionButton.updateUiState(actionButtonUiState)
+            hintTextView.updateText(R.string.click_pick)
         }
     }
 
@@ -29,13 +38,15 @@ interface UiState {
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
-        override fun update(binding: ActivityMainBinding) {
-            binding.actionImageButton.updateUiState(actionImageButtonUiState)
-            binding.actionButton.updateUiState(actionButtonUiState)
-            hintTextView.show(binding.hintTextView)
+        override fun update(
+            actionImageButton: UpdateImage,
+            actionButton: UpdateButton,
+            hintTextView: UpdateText,
+        ) {
+            actionImageButton.updateUiState(actionImageButtonUiState)
+            actionButton.updateUiState(actionButtonUiState)
+            hintTextView.updateText(R.string.click_lemon)
         }
-
-        override fun handleAction(viewModel: Actions) = throw IllegalStateException("need to squeeze")
     }
 
     data class LemonAfter(
@@ -43,14 +54,14 @@ interface UiState {
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
-        override fun update(binding: ActivityMainBinding) {
-            binding.actionImageButton.updateUiState(actionImageButtonUiState)
-            binding.actionButton.updateUiState(actionButtonUiState)
-            hintTextView.show(binding.hintTextView)
-        }
-
-        override fun handleAction(viewModel: Actions): UiState {
-            return viewModel.goToJuice()
+        override fun update(
+            actionImageButton: UpdateImage,
+            actionButton: UpdateButton,
+            hintTextView: UpdateText,
+        ) {
+            actionImageButton.updateUiState(actionImageButtonUiState)
+            actionButton.updateUiState(actionButtonUiState)
+            hintTextView.updateText(R.string.click_squeeze)
         }
     }
 
@@ -59,15 +70,16 @@ interface UiState {
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
-        override fun update(binding: ActivityMainBinding) {
-            binding.actionImageButton.updateUiState(actionImageButtonUiState)
-            binding.actionButton.updateUiState(actionButtonUiState)
-            hintTextView.show(binding.hintTextView)
+        override fun update(
+            actionImageButton: UpdateImage,
+            actionButton: UpdateButton,
+            hintTextView: UpdateText,
+        ) {
+            actionImageButton.updateUiState(actionImageButtonUiState)
+            actionButton.updateUiState(actionButtonUiState)
+            hintTextView.updateText(R.string.click_drink)
         }
 
-        override fun handleAction(viewModel: Actions): UiState {
-            return viewModel.goToGlass()
-        }
     }
 
     data class Glass(
@@ -75,14 +87,14 @@ interface UiState {
         private val actionButtonUiState: ActionButtonUiState,
         private val hintTextView: HintTextViewUiState,
     ) : UiState {
-        override fun update(binding: ActivityMainBinding) {
-            binding.actionImageButton.updateUiState(actionImageButtonUiState)
-            binding.actionButton.updateUiState(actionButtonUiState)
-            hintTextView.show(binding.hintTextView)
-        }
-
-        override fun handleAction(viewModel: Actions): UiState {
-            return viewModel.goAgain()
+        override fun update(
+            actionImageButton: UpdateImage,
+            actionButton: UpdateButton,
+            hintTextView: UpdateText,
+        ) {
+            actionImageButton.updateUiState(actionImageButtonUiState)
+            actionButton.updateUiState(actionButtonUiState)
+            hintTextView.updateText(R.string.click_again)
         }
     }
 }

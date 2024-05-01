@@ -23,7 +23,7 @@
         android:layout_marginVertical="32dp"
         tools:text="@string/tree"/>
 
-    <TextView
+    <com.example.lemonjuice.HintTextView
         android:id="@+id/hintTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

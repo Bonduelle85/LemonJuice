@@ -1,8 +1,7 @@
 package com.example.lemonjuice
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.lemonjuice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,18 +17,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.actionButton.setOnClickListener {
             uiState = binding.actionButton.handleAction(viewModel)
-            uiState.update(binding)
+            uiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
         }
 
         binding.actionImageButton.setOnClickListener {
             uiState = viewModel.handleImageButton()
-            uiState.update(binding)
+            uiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
         }
 
-        if (savedInstanceState == null) {
-            uiState = viewModel.init().also {
-                it.update(binding)
-            }
-        }
+        uiState = viewModel.init(savedInstanceState == null)
+        uiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
     }
 }

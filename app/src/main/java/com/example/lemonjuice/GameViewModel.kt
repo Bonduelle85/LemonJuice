@@ -4,12 +4,16 @@ class GameViewModel(
     private val repository: Repository
 ): Actions {
 
-    fun init(): UiState {
-        return UiState.Tree(
-            actionImageButtonUiState = ActionImageButtonUiState.Tree,
-            actionButtonUiState = ActionButtonUiState.Tree,
-            hintTextView = HintTextViewUiState.Tree,
-        )
+    fun init(isFirstTime: Boolean = true): UiState {
+        return if (isFirstTime) {
+            UiState.Tree(
+                actionImageButtonUiState = ActionImageButtonUiState.Tree,
+                actionButtonUiState = ActionButtonUiState.Tree,
+                hintTextView = HintTextViewUiState.Tree,
+            )
+        } else {
+            UiState.Empty
+        }
     }
     
     fun handleImageButton(): UiState {

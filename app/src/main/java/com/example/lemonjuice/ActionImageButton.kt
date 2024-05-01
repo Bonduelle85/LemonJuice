@@ -3,8 +3,9 @@ package com.example.lemonjuice
 import android.content.Context
 import android.os.Parcelable
 import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatImageButton
 
-class ActionImageButton : androidx.appcompat.widget.AppCompatImageButton {
+class ActionImageButton : AppCompatImageButton, UpdateImage {
 
     private lateinit var uiState: ActionImageButtonUiState
 
@@ -16,7 +17,7 @@ class ActionImageButton : androidx.appcompat.widget.AppCompatImageButton {
         defStyleAttrs
     )
 
-    fun updateUiState(outer: ActionImageButtonUiState) {
+    override fun updateUiState(outer: ActionImageButtonUiState) {
         uiState = outer
         uiState.show(this)
     }
@@ -34,4 +35,8 @@ class ActionImageButton : androidx.appcompat.widget.AppCompatImageButton {
         super.onRestoreInstanceState(restoredState.superState)
         updateUiState(restoredState.restore())
     }
+}
+
+interface UpdateImage{
+    fun updateUiState(outer: ActionImageButtonUiState)
 }
