@@ -2,6 +2,10 @@ package com.example.lemonjuice
 
 import android.app.Application
 import android.content.Context
+import com.example.lemonjuice.data.IntCache
+import com.example.lemonjuice.data.PermanentStorage
+import com.example.lemonjuice.data.Repository
+import com.example.lemonjuice.presentation.GameViewModel
 
 class LemonJuiceApp : Application() {
 
@@ -16,7 +20,8 @@ class LemonJuiceApp : Application() {
             )
         )
 
-        viewModel = GameViewModel(Repository.Base(
+        viewModel = GameViewModel(
+            Repository.Base(
             IntCache.Base("counter", permanentStorage, 0)
         ))
     }

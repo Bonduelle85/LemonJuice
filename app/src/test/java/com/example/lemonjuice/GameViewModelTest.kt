@@ -1,5 +1,11 @@
 package com.example.lemonjuice
 
+import com.example.lemonjuice.data.Repository
+import com.example.lemonjuice.presentation.GameViewModel
+import com.example.lemonjuice.presentation.UiState
+import com.example.lemonjuice.views.button.ActionButtonUiState
+import com.example.lemonjuice.views.image.ActionImageButtonUiState
+import com.example.lemonjuice.views.text.HintTextViewUiState
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -24,7 +30,7 @@ class GameViewModelTest {
         var expectedUiState: UiState = UiState.Tree(
             actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
-            hintTextView = HintTextViewUiState.Tree,
+            hintTextViewUiState = HintTextViewUiState.Tree,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -32,7 +38,7 @@ class GameViewModelTest {
         expectedUiState = UiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
-            hintTextView = HintTextViewUiState.LemonBefore,
+            hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -41,7 +47,7 @@ class GameViewModelTest {
         expectedUiState = UiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
-            hintTextView = HintTextViewUiState.LemonBefore,
+            hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -49,7 +55,7 @@ class GameViewModelTest {
         expectedUiState = UiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
-            hintTextView = HintTextViewUiState.LemonBefore,
+            hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -57,7 +63,7 @@ class GameViewModelTest {
         expectedUiState = UiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
-            hintTextView = HintTextViewUiState.LemonBefore,
+            hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -65,7 +71,7 @@ class GameViewModelTest {
         expectedUiState = UiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
-            hintTextView = HintTextViewUiState.LemonBefore,
+            hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -73,7 +79,7 @@ class GameViewModelTest {
         expectedUiState = UiState.LemonAfter(
             actionImageButtonUiState = ActionImageButtonUiState.LemonAfter,
             actionButtonUiState = ActionButtonUiState.LemonAfter,
-            hintTextView = HintTextViewUiState.LemonAfter,
+            hintTextViewUiState = HintTextViewUiState.LemonAfter,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -81,7 +87,7 @@ class GameViewModelTest {
         expectedUiState = UiState.Juice(
             actionImageButtonUiState = ActionImageButtonUiState.Juice,
             actionButtonUiState = ActionButtonUiState.Juice,
-            hintTextView = HintTextViewUiState.Juice,
+            hintTextViewUiState = HintTextViewUiState.Juice,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -89,7 +95,7 @@ class GameViewModelTest {
         expectedUiState = UiState.Glass(
             actionImageButtonUiState = ActionImageButtonUiState.Glass,
             actionButtonUiState = ActionButtonUiState.Glass,
-            hintTextView = HintTextViewUiState.Glass,
+            hintTextViewUiState = HintTextViewUiState.Glass,
         )
         assertEquals(expectedUiState, actualUiState)
 
@@ -97,7 +103,7 @@ class GameViewModelTest {
         expectedUiState = UiState.Tree(
             actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
-            hintTextView = HintTextViewUiState.Tree,
+            hintTextViewUiState = HintTextViewUiState.Tree,
         )
         assertEquals(expectedUiState, actualUiState)
     }

@@ -1,4 +1,4 @@
-package com.example.lemonjuice
+package com.example.lemonjuice.views.image
 
 import android.os.Build
 import android.os.Parcel

@@ -1,4 +1,4 @@
-package com.example.lemonjuice
+package com.example.lemonjuice.data
 
 interface Repository {
 

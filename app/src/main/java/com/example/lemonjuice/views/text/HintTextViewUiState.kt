@@ -1,6 +1,7 @@
-package com.example.lemonjuice
+package com.example.lemonjuice.views.text
 
 import androidx.annotation.StringRes
+import com.example.lemonjuice.R
 
 interface HintTextViewUiState {
 

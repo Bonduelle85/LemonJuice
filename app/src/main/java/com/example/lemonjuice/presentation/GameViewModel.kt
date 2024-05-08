@@ -1,4 +1,9 @@
-package com.example.lemonjuice
+package com.example.lemonjuice.presentation
+
+import com.example.lemonjuice.data.Repository
+import com.example.lemonjuice.views.button.ActionButtonUiState
+import com.example.lemonjuice.views.image.ActionImageButtonUiState
+import com.example.lemonjuice.views.text.HintTextViewUiState
 
 class GameViewModel(
     private val repository: Repository
@@ -9,7 +14,7 @@ class GameViewModel(
             UiState.Tree(
                 actionImageButtonUiState = ActionImageButtonUiState.Tree,
                 actionButtonUiState = ActionButtonUiState.Tree,
-                hintTextView = HintTextViewUiState.Tree,
+                hintTextViewUiState = HintTextViewUiState.Tree,
             )
         } else {
             UiState.Empty
@@ -22,13 +27,13 @@ class GameViewModel(
             UiState.LemonAfter(
                 actionImageButtonUiState = ActionImageButtonUiState.LemonAfter,
                 actionButtonUiState = ActionButtonUiState.LemonAfter,
-                hintTextView = HintTextViewUiState.LemonAfter,
+                hintTextViewUiState = HintTextViewUiState.LemonAfter,
             )
         } else {
             UiState.LemonBefore(
                 actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
                 actionButtonUiState = ActionButtonUiState.LemonBefore,
-                hintTextView = HintTextViewUiState.LemonBefore,
+                hintTextViewUiState = HintTextViewUiState.LemonBefore,
             )
         }
     }
@@ -37,7 +42,7 @@ class GameViewModel(
         return UiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
-            hintTextView = HintTextViewUiState.LemonBefore,
+            hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
     }
 
@@ -45,7 +50,7 @@ class GameViewModel(
         return UiState.Juice(
             actionImageButtonUiState = ActionImageButtonUiState.Juice,
             actionButtonUiState = ActionButtonUiState.Juice,
-            hintTextView = HintTextViewUiState.Juice,
+            hintTextViewUiState = HintTextViewUiState.Juice,
         )
     }
 
@@ -53,7 +58,7 @@ class GameViewModel(
         return UiState.Glass(
             actionImageButtonUiState = ActionImageButtonUiState.Glass,
             actionButtonUiState = ActionButtonUiState.Glass,
-            hintTextView = HintTextViewUiState.Glass,
+            hintTextViewUiState = HintTextViewUiState.Glass,
         )
     }
 

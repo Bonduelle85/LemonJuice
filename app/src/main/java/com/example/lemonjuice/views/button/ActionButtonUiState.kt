@@ -1,6 +1,9 @@
-package com.example.lemonjuice
+package com.example.lemonjuice.views.button
 
 import androidx.appcompat.widget.AppCompatButton
+import com.example.lemonjuice.presentation.Actions
+import com.example.lemonjuice.R
+import com.example.lemonjuice.presentation.UiState
 import java.io.Serializable
 
 interface ActionButtonUiState : Serializable {
@@ -52,7 +55,7 @@ interface ActionButtonUiState : Serializable {
         }
     }
 
-    object Glass: ActionButtonUiState{
+    object Glass: ActionButtonUiState {
         override fun show(actionButton: AppCompatButton) {
             actionButton.setText(R.string.again)
             actionButton.isEnabled = true
