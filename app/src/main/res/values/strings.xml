@@ -5,7 +5,7 @@
     <string name="tree">tree</string>
     <string name="lemon">lemon</string>
     <string name="juice">juice</string>
-    <string name="empty_glass">empty glass</string>
+    <string name="glass">glass</string>
 
     <!--Action Button Text-->
     <string name="pick">pick</string>

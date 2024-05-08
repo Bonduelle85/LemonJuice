@@ -20,7 +20,7 @@
         android:id="@+id/actionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="32dp"
+        android:layout_marginVertical="16dp"
         tools:text="@string/tree"/>
 
     <com.example.lemonjuice.views.text.HintTextView
