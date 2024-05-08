@@ -35,8 +35,24 @@ class ActionImageButton : AppCompatImageButton, UpdateImage {
         super.onRestoreInstanceState(restoredState.superState)
         updateUiState(restoredState.restore())
     }
+
+    override fun updateImage(resId: Int) {
+        this.setImageResource(resId)
+    }
+
+    override fun updateClickable(isClickable: Boolean) {
+        this.isClickable = isClickable
+    }
+
+    override fun updateContentDescription(resId: Int) {
+        this.contentDescription = this.context.getString(resId)
+    }
 }
 
 interface UpdateImage{
     fun updateUiState(outer: ActionImageButtonUiState)
+
+    fun updateImage(resId: Int)
+    fun updateClickable(isClickable: Boolean)
+    fun updateContentDescription(resId: Int)
 }

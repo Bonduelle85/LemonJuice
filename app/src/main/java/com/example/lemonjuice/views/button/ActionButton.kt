@@ -39,8 +39,19 @@ class ActionButton : AppCompatButton, UpdateButton {
         super.onRestoreInstanceState(restoredState.superState)
         updateUiState(restoredState.restore())
     }
+
+    override fun updateText(resId: Int) {
+        this.setText(resId)
+    }
+
+    override fun updateEnabled(isEnabled: Boolean) {
+        this.isEnabled = isEnabled
+    }
 }
 
 interface UpdateButton{
     fun updateUiState(outer: ActionButtonUiState)
+
+    fun updateText(resId: Int)
+    fun updateEnabled(isEnabled: Boolean)
 }

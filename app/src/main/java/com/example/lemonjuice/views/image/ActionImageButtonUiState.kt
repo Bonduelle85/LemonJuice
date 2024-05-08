@@ -6,45 +6,45 @@ import java.io.Serializable
 
 interface ActionImageButtonUiState : Serializable {
 
-    fun show(imageButton: ImageButton)
+    fun show(updateImage: UpdateImage)
 
     object Tree : ActionImageButtonUiState {
-        override fun show(imageButton: ImageButton) {
-            imageButton.setImageResource(R.drawable.tree)
-            imageButton.isClickable = false
-            imageButton.contentDescription = imageButton.context.getString(R.string.tree)
+        override fun show(updateImage: UpdateImage) {
+            updateImage.updateImage(R.drawable.tree)
+            updateImage.updateClickable(false)
+            updateImage.updateContentDescription(R.string.tree)
         }
     }
 
     object LemonBefore : ActionImageButtonUiState {
-        override fun show(imageButton: ImageButton) {
-            imageButton.setImageResource(R.drawable.ic_lemon)
-            imageButton.isClickable = true
-            imageButton.contentDescription = imageButton.context.getString(R.string.lemon)
+        override fun show(updateImage: UpdateImage) {
+            updateImage.updateImage(R.drawable.ic_lemon)
+            updateImage.updateClickable(true)
+            updateImage.updateContentDescription(R.string.lemon)
         }
     }
 
     object LemonAfter : ActionImageButtonUiState {
-        override fun show(imageButton: ImageButton) {
-            imageButton.setImageResource(R.drawable.ic_lemon)
-            imageButton.isClickable = false
-            imageButton.contentDescription = imageButton.context.getString(R.string.lemon)
+        override fun show(updateImage: UpdateImage) {
+            updateImage.updateImage(R.drawable.ic_lemon)
+            updateImage.updateClickable(false)
+            updateImage.updateContentDescription(R.string.lemon)
         }
     }
 
     object Juice : ActionImageButtonUiState {
-        override fun show(imageButton: ImageButton) {
-            imageButton.setImageResource(R.drawable.ic_juice)
-            imageButton.isClickable = false
-            imageButton.contentDescription = imageButton.context.getString(R.string.juice)
+        override fun show(updateImage: UpdateImage) {
+            updateImage.updateImage(R.drawable.ic_juice)
+            updateImage.updateClickable(false)
+            updateImage.updateContentDescription(R.string.juice)
         }
     }
 
     object Glass : ActionImageButtonUiState {
-        override fun show(imageButton: ImageButton) {
-            imageButton.setImageResource(R.drawable.ic_empty_glass)
-            imageButton.isClickable = false
-            imageButton.contentDescription = imageButton.context.getString(R.string.glass)
+        override fun show(updateImage: UpdateImage) {
+            updateImage.updateImage(R.drawable.ic_empty_glass)
+            updateImage.updateClickable(false)
+            updateImage.updateContentDescription(R.string.glass)
         }
     }
 }

@@ -5,13 +5,13 @@ import com.example.lemonjuice.R
 
 interface HintTextViewUiState {
 
-    fun show(textView: UpdateText)
+    fun show(updateText: UpdateText)
 
     abstract class Abstract(
         @StringRes private val resId: Int
     ) : HintTextViewUiState {
-        override fun show(textView: UpdateText) {
-            textView.updateText(resId)
+        override fun show(updateText: UpdateText) {
+            updateText.updateText(resId)
         }
     }
 
