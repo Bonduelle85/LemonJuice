@@ -1,6 +1,5 @@
 package com.example.lemonjuice.views.image
 
-import android.widget.ImageButton
 import com.example.lemonjuice.R
 import java.io.Serializable
 

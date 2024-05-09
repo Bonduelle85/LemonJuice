@@ -7,30 +7,26 @@ import com.example.lemonjuice.views.text.HintTextViewUiState
 
 class GameViewModel(
     private val repository: Repository
-): Actions {
+) : Actions {
 
-    fun init(isFirstTime: Boolean = true): UiState {
-        return if (isFirstTime) {
-            UiState.Tree(
-                actionImageButtonUiState = ActionImageButtonUiState.Tree,
-                actionButtonUiState = ActionButtonUiState.Tree,
-                hintTextViewUiState = HintTextViewUiState.Tree,
-            )
-        } else {
-            UiState.Empty
-        }
+    fun init(): LemonUiState {
+        return LemonUiState.LemonBefore(
+            actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
+            actionButtonUiState = ActionButtonUiState.LemonBefore,
+            hintTextViewUiState = HintTextViewUiState.LemonBefore,
+        )
     }
-    
-    fun handleImageButton(): UiState {
+
+    fun handleImageButton(): LemonUiState {
         repository.increment()
         return if (repository.isLast()) {
-            UiState.LemonAfter(
+            LemonUiState.LemonAfter(
                 actionImageButtonUiState = ActionImageButtonUiState.LemonAfter,
                 actionButtonUiState = ActionButtonUiState.LemonAfter,
                 hintTextViewUiState = HintTextViewUiState.LemonAfter,
             )
         } else {
-            UiState.LemonBefore(
+            LemonUiState.LemonBefore(
                 actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
                 actionButtonUiState = ActionButtonUiState.LemonBefore,
                 hintTextViewUiState = HintTextViewUiState.LemonBefore,
@@ -38,39 +34,20 @@ class GameViewModel(
         }
     }
 
-    override fun goLemonBefore(): UiState {
-        return UiState.LemonBefore(
+    override fun goLemonBefore(): LemonUiState {
+        return LemonUiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
     }
 
-    override fun goToJuice(): UiState {
-        return UiState.Juice(
-            actionImageButtonUiState = ActionImageButtonUiState.Juice,
-            actionButtonUiState = ActionButtonUiState.Juice,
-            hintTextViewUiState = HintTextViewUiState.Juice,
-        )
-    }
-
-    override fun goToGlass(): UiState {
-        return UiState.Glass(
-            actionImageButtonUiState = ActionImageButtonUiState.Glass,
-            actionButtonUiState = ActionButtonUiState.Glass,
-            hintTextViewUiState = HintTextViewUiState.Glass,
-        )
-    }
-
-    override fun goAgain(): UiState {
+    override fun goAgain() {
         repository.reset()
-        return init()
     }
 }
 
-interface Actions{
-    fun goToGlass(): UiState
-    fun goToJuice(): UiState
-    fun goAgain(): UiState
-    fun goLemonBefore(): UiState
+interface Actions {
+    fun goAgain()
+    fun goLemonBefore(): LemonUiState
 }

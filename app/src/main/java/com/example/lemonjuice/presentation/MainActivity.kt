@@ -2,31 +2,29 @@ package com.example.lemonjuice.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lemonjuice.LemonJuiceApp
+import androidx.fragment.app.Fragment
+import com.example.lemonjuice.R
 import com.example.lemonjuice.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Navigation {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        lateinit var uiState: UiState
+        if (savedInstanceState == null)
+            navigate(TreeFragment())
 
-        val viewModel = (application as LemonJuiceApp).viewModel
-
-        binding.actionButton.setOnClickListener {
-            uiState = binding.actionButton.handleAction(viewModel)
-            uiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
-        }
-
-        binding.actionImageButton.setOnClickListener {
-            uiState = viewModel.handleImageButton()
-            uiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
-        }
-
-        uiState = viewModel.init(savedInstanceState == null)
-        uiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
     }
+
+    override fun navigate(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, fragment)
+            .commit()
+    }
+}
+
+interface Navigation {
+    fun navigate(fragment: Fragment)
 }

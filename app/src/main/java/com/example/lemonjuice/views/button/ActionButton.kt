@@ -4,8 +4,6 @@ import android.content.Context
 import android.os.Parcelable
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatButton
-import com.example.lemonjuice.presentation.Actions
-import com.example.lemonjuice.presentation.UiState
 
 class ActionButton : AppCompatButton, UpdateButton {
 
@@ -18,8 +16,6 @@ class ActionButton : AppCompatButton, UpdateButton {
         attributeSet,
         defStyleAttrs
     )
-
-    fun handleAction(viewModel: Actions): UiState = uiState.handleAction(viewModel)
 
     override fun updateUiState(outer: ActionButtonUiState) {
         uiState = outer

@@ -2,7 +2,7 @@ package com.example.lemonjuice
 
 import com.example.lemonjuice.data.Repository
 import com.example.lemonjuice.presentation.GameViewModel
-import com.example.lemonjuice.presentation.UiState
+import com.example.lemonjuice.presentation.LemonUiState
 import com.example.lemonjuice.views.button.ActionButtonUiState
 import com.example.lemonjuice.views.image.ActionImageButtonUiState
 import com.example.lemonjuice.views.text.HintTextViewUiState
@@ -26,86 +26,86 @@ class GameViewModelTest {
 
     @Test
     fun case() {
-        var actualUiState: UiState = viewModel.init() // Tree
-        var expectedUiState: UiState = UiState.Tree(
+        var actualLemonUiState: LemonUiState = viewModel.init() // Tree
+        var expectedLemonUiState: LemonUiState = LemonUiState.Tree(
             actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
             hintTextViewUiState = HintTextViewUiState.Tree,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.goLemonBefore()
-        expectedUiState = UiState.LemonBefore(
+        actualLemonUiState = viewModel.goLemonBefore()
+        expectedLemonUiState = LemonUiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
 
-        actualUiState = viewModel.handleImageButton() // 1 LemonBefore
-        expectedUiState = UiState.LemonBefore(
+        actualLemonUiState = viewModel.handleImageButton() // 1 LemonBefore
+        expectedLemonUiState = LemonUiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.handleImageButton() // 2 LemonBefore
-        expectedUiState = UiState.LemonBefore(
+        actualLemonUiState = viewModel.handleImageButton() // 2 LemonBefore
+        expectedLemonUiState = LemonUiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.handleImageButton() // 3 LemonBefore
-        expectedUiState = UiState.LemonBefore(
+        actualLemonUiState = viewModel.handleImageButton() // 3 LemonBefore
+        expectedLemonUiState = LemonUiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.handleImageButton() // 4 LemonBefore
-        expectedUiState = UiState.LemonBefore(
+        actualLemonUiState = viewModel.handleImageButton() // 4 LemonBefore
+        expectedLemonUiState = LemonUiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
             hintTextViewUiState = HintTextViewUiState.LemonBefore,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.handleImageButton() // 5 LemonAfter
-        expectedUiState = UiState.LemonAfter(
+        actualLemonUiState = viewModel.handleImageButton() // 5 LemonAfter
+        expectedLemonUiState = LemonUiState.LemonAfter(
             actionImageButtonUiState = ActionImageButtonUiState.LemonAfter,
             actionButtonUiState = ActionButtonUiState.LemonAfter,
             hintTextViewUiState = HintTextViewUiState.LemonAfter,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.goToJuice() // Juice
-        expectedUiState = UiState.Juice(
+        actualLemonUiState = viewModel.goToJuice() // Juice
+        expectedLemonUiState = LemonUiState.Juice(
             actionImageButtonUiState = ActionImageButtonUiState.Juice,
             actionButtonUiState = ActionButtonUiState.Juice,
             hintTextViewUiState = HintTextViewUiState.Juice,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.goToGlass() // Glass
-        expectedUiState = UiState.Glass(
+        actualLemonUiState = viewModel.goToGlass() // Glass
+        expectedLemonUiState = LemonUiState.Glass(
             actionImageButtonUiState = ActionImageButtonUiState.Glass,
             actionButtonUiState = ActionButtonUiState.Glass,
             hintTextViewUiState = HintTextViewUiState.Glass,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualUiState = viewModel.goAgain() // Tree
-        expectedUiState = UiState.Tree(
+        actualLemonUiState = viewModel.goAgain() // Tree
+        expectedLemonUiState = LemonUiState.Tree(
             actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
             hintTextViewUiState = HintTextViewUiState.Tree,
         )
-        assertEquals(expectedUiState, actualUiState)
+        assertEquals(expectedLemonUiState, actualLemonUiState)
     }
 }
 
