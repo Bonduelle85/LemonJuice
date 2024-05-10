@@ -1,19 +1,15 @@
 package com.example.lemonjuice.presentation
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.lemonjuice.LemonJuiceApp
 import com.example.lemonjuice.R
-import com.example.lemonjuice.databinding.FragmentMainBinding
 
 class GlassFragment : AbstractFragment(
-    actionImageButtonImageResId = R.drawable.ic_empty_glass,
-    actionImageButtonDescResId = R.string.glass,
-    actionButtonTextResId = R.string.again,
-    hintTextViewTextResId = R.string.click_again,
+    imageResId = R.drawable.ic_empty_glass,
+    descResId = R.string.glass,
+    actionTextResId = R.string.again,
+    hintResId = R.string.click_again,
 ) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
