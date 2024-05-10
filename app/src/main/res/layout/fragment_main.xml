@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/treeLayout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,21 +13,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
-        android:src="@drawable/tree"
-        android:contentDescription="@string/tree"/>
+        android:src="@drawable/ic_empty_glass"
+        tools:contentDescription="@string/glass"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/actionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="16dp"
-        android:text="@string/pick"/>
+        android:text="@string/again"/>
 
     <TextView
         android:id="@+id/hintTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:freezesText="true"
-        android:text="@string/click_pick" />
+        android:text="@string/click_again" />
 
 </LinearLayout>

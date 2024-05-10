@@ -5,34 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.lemonjuice.databinding.FragmentTreeBinding
-import com.example.lemonjuice.presentation.Navigation
-import com.example.lemonjuice.presentation.LemonFragment
+import com.example.lemonjuice.R
+import com.example.lemonjuice.databinding.FragmentMainBinding
 
-class TreeFragment : Fragment() {
-
-    private var _binding: FragmentTreeBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentTreeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class TreeFragment : AbstractFragment(
+    actionImageButtonImageResId = R.drawable.ic_tree,
+    actionImageButtonDescResId = R.string.tree,
+    actionButtonTextResId = R.string.pick,
+    hintTextViewTextResId = R.string.click_pick,
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.actionButton.setOnClickListener {
             (requireActivity() as Navigation).navigate(LemonFragment())
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

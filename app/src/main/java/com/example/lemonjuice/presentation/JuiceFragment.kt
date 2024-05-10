@@ -5,23 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.lemonjuice.databinding.FragmentJuiceBinding
-import com.example.lemonjuice.presentation.Navigation
-import com.example.lemonjuice.presentation.GlassFragment
+import com.example.lemonjuice.R
+import com.example.lemonjuice.databinding.FragmentMainBinding
 
-class JuiceFragment : Fragment() {
-
-    private var _binding: FragmentJuiceBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentJuiceBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class JuiceFragment : AbstractFragment(
+    actionImageButtonImageResId = R.drawable.ic_juice,
+    actionImageButtonDescResId = R.string.juice,
+    actionButtonTextResId = R.string.drink,
+    hintTextViewTextResId = R.string.click_drink,
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,8 +23,4 @@ class JuiceFragment : Fragment() {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }

@@ -9,7 +9,7 @@ interface ActionImageButtonUiState : Serializable {
 
     object Tree : ActionImageButtonUiState {
         override fun show(updateImage: UpdateImage) {
-            updateImage.updateImage(R.drawable.tree)
+            updateImage.updateImage(R.drawable.ic_tree)
             updateImage.updateClickable(false)
             updateImage.updateContentDescription(R.string.tree)
         }

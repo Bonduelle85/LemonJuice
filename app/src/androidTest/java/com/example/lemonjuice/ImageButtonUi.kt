@@ -36,7 +36,7 @@ class ImageButtonUi(
     fun checkStateIsTree() {
         viewInteraction
             .check(matches(withContentDescription(contentDescriptionTree)))
-            .check(matches(DrawableMatcher(R.drawable.tree)))
+            .check(matches(DrawableMatcher(R.drawable.ic_tree)))
             .check(matches(Matchers.not(isClickable())))
     }
 

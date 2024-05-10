@@ -6,21 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.lemonjuice.LemonJuiceApp
-import com.example.lemonjuice.databinding.FragmentGlassBinding
+import com.example.lemonjuice.R
+import com.example.lemonjuice.databinding.FragmentMainBinding
 
-class GlassFragment : Fragment() {
-
-    private var _binding: FragmentGlassBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentGlassBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class GlassFragment : AbstractFragment(
+    actionImageButtonImageResId = R.drawable.ic_empty_glass,
+    actionImageButtonDescResId = R.string.glass,
+    actionButtonTextResId = R.string.again,
+    hintTextViewTextResId = R.string.click_again,
+) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,10 +25,5 @@ class GlassFragment : Fragment() {
             viewModel.goAgain()
             (requireActivity() as Navigation).navigate(TreeFragment())
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
