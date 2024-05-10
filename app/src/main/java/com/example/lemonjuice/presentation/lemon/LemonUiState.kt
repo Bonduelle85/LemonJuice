@@ -1,4 +1,4 @@
-package com.example.lemonjuice.presentation
+package com.example.lemonjuice.presentation.lemon
 
 import com.example.lemonjuice.views.button.ActionButtonUiState
 import com.example.lemonjuice.views.button.UpdateButton

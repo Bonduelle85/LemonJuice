@@ -1,9 +1,10 @@
-package com.example.lemonjuice.presentation
+package com.example.lemonjuice.presentation.glass
 
 import android.os.Bundle
 import android.view.View
 import com.example.lemonjuice.LemonJuiceApp
 import com.example.lemonjuice.R
+import com.example.lemonjuice.presentation.core.AbstractFragment
 
 class GlassFragment : AbstractFragment(
     imageResId = R.drawable.ic_empty_glass,
@@ -19,7 +20,11 @@ class GlassFragment : AbstractFragment(
 
         binding.actionButton.setOnClickListener {
             viewModel.goAgain()
-            (requireActivity() as Navigation).navigate(TreeFragment())
+            (requireActivity() as GlassNavigation).navigateToTree()
         }
     }
+}
+
+interface GlassNavigation{
+    fun navigateToTree()
 }

@@ -1,4 +1,4 @@
-package com.example.lemonjuice.presentation
+package com.example.lemonjuice.presentation.lemon
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -30,7 +30,7 @@ class LemonFragment : Fragment() {
         val viewModel = (requireActivity().application as LemonJuiceApp).viewModel
 
         binding.actionButton.setOnClickListener {
-            (requireActivity() as Navigation).navigate(JuiceFragment())
+            (requireActivity() as LemonNavigation).navigateToJuice()
         }
 
         binding.actionImageButton.setOnClickListener {
@@ -46,4 +46,8 @@ class LemonFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+}
+
+interface LemonNavigation{
+    fun navigateToJuice()
 }

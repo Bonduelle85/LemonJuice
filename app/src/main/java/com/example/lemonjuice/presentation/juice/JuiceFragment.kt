@@ -1,8 +1,9 @@
-package com.example.lemonjuice.presentation
+package com.example.lemonjuice.presentation.juice
 
 import android.os.Bundle
 import android.view.View
 import com.example.lemonjuice.R
+import com.example.lemonjuice.presentation.core.AbstractFragment
 
 class JuiceFragment : AbstractFragment(
     imageResId = R.drawable.ic_juice,
@@ -15,8 +16,11 @@ class JuiceFragment : AbstractFragment(
         super.onViewCreated(view, savedInstanceState)
 
         binding.actionButton.setOnClickListener {
-            (requireActivity() as Navigation).navigate(GlassFragment())
+            (requireActivity() as JuiceNavigation).navigateToGlass()
         }
     }
+}
 
+interface JuiceNavigation{
+    fun navigateToGlass()
 }

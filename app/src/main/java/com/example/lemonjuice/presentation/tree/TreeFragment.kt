@@ -1,8 +1,9 @@
-package com.example.lemonjuice.presentation
+package com.example.lemonjuice.presentation.tree
 
 import android.os.Bundle
 import android.view.View
 import com.example.lemonjuice.R
+import com.example.lemonjuice.presentation.core.AbstractFragment
 
 class TreeFragment : AbstractFragment(
     imageResId = R.drawable.ic_tree,
@@ -14,7 +15,11 @@ class TreeFragment : AbstractFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.actionButton.setOnClickListener {
-            (requireActivity() as Navigation).navigate(LemonFragment())
+            (requireActivity() as TreeNavigation).navigateToLemon()
         }
     }
+}
+
+interface TreeNavigation {
+    fun navigateToLemon()
 }

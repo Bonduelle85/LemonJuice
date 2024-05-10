@@ -1,4 +1,4 @@
-package com.example.lemonjuice.presentation
+package com.example.lemonjuice.presentation.core
 
 import android.os.Bundle
 import android.view.LayoutInflater

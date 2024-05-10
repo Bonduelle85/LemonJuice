@@ -2,9 +2,17 @@ package com.example.lemonjuice.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.example.lemonjuice.R
 import com.example.lemonjuice.databinding.ActivityMainBinding
+import com.example.lemonjuice.presentation.core.Screen
+import com.example.lemonjuice.presentation.glass.GlassNavigation
+import com.example.lemonjuice.presentation.glass.GlassScreen
+import com.example.lemonjuice.presentation.juice.JuiceNavigation
+import com.example.lemonjuice.presentation.juice.JuiceScreen
+import com.example.lemonjuice.presentation.lemon.LemonNavigation
+import com.example.lemonjuice.presentation.lemon.LemonScreen
+import com.example.lemonjuice.presentation.tree.TreeNavigation
+import com.example.lemonjuice.presentation.tree.TreeScreen
 
 class MainActivity : AppCompatActivity(), Navigation {
 
@@ -14,17 +22,31 @@ class MainActivity : AppCompatActivity(), Navigation {
         setContentView(binding.root)
 
         if (savedInstanceState == null)
-            navigate(TreeFragment())
-
+            navigate(TreeScreen)
     }
 
-    override fun navigate(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, fragment)
-            .commit()
+    override fun navigate(screen: Screen) {
+        screen.show(R.id.container, supportFragmentManager)
     }
 }
 
-interface Navigation {
-    fun navigate(fragment: Fragment)
+interface Navigation : TreeNavigation, JuiceNavigation, LemonNavigation, GlassNavigation {
+    fun navigate(screen: Screen)
+
+    override fun navigateToLemon() {
+        navigate(LemonScreen)
+    }
+
+    override fun navigateToGlass() {
+        navigate(GlassScreen)
+    }
+
+    override fun navigateToJuice() {
+        navigate(JuiceScreen)
+    }
+
+    override fun navigateToTree() {
+        navigate(TreeScreen)
+    }
 }
+

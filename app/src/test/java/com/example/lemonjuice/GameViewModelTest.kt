@@ -2,7 +2,7 @@ package com.example.lemonjuice
 
 import com.example.lemonjuice.data.Repository
 import com.example.lemonjuice.presentation.GameViewModel
-import com.example.lemonjuice.presentation.LemonUiState
+import com.example.lemonjuice.presentation.lemon.LemonUiState
 import com.example.lemonjuice.views.button.ActionButtonUiState
 import com.example.lemonjuice.views.image.ActionImageButtonUiState
 import com.example.lemonjuice.views.text.HintTextViewUiState
