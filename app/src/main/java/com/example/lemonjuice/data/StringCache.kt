@@ -1,24 +1,23 @@
 package com.example.lemonjuice.data
 
-interface IntCache {
+interface StringCache {
 
-    fun save(value: Int)
+    fun save(value: String)
 
-    fun read(): Int
+    fun read(): String
 
     class Base(
         private val key: String,
         private val permanentStorage: PermanentStorage,
-        private val default: Int
-    ) : IntCache {
+        private val default: String
+    ) : StringCache {
 
-        override fun save(value: Int) {
+        override fun save(value: String) {
             permanentStorage.save(value, key)
         }
 
-        override fun read(): Int {
+        override fun read(): String {
             return permanentStorage.read(key, default)
         }
     }
 }
-

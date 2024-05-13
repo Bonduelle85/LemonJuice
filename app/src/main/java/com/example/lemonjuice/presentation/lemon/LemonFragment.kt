@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.lemonjuice.LemonJuiceApp
 import com.example.lemonjuice.databinding.FragmentLemonBinding
+import com.example.lemonjuice.presentation.core.ManageViewModels
 
 class LemonFragment : Fragment() {
 
@@ -27,9 +28,11 @@ class LemonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = (requireActivity().application as LemonJuiceApp).viewModel
+        val manageViewModels = activity as ManageViewModels
+        val viewModel = manageViewModels.viewModel(LemonViewModel::class.java)
 
         binding.actionButton.setOnClickListener {
+            viewModel.resetCounter()
             (requireActivity() as LemonNavigation).navigateToJuice()
         }
 

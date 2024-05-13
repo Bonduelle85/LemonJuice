@@ -1,14 +1,18 @@
 package com.example.lemonjuice.data
 
-interface Repository {
+import com.example.lemonjuice.presentation.lemon.LemonScreen
+
+interface LemonRepository {
 
     fun increment()
     fun isLast(): Boolean
     fun reset()
+    fun saveLastScreenIsLemon()
 
     class Base(
+        private val lastScreen: StringCache,
         private var counter: IntCache,
-    ) : Repository {
+    ) : LemonRepository {
 
         override fun increment() {
             val old = counter.read()
@@ -20,6 +24,10 @@ interface Repository {
 
         override fun reset() {
             counter.save(0)
+        }
+
+        override fun saveLastScreenIsLemon() {
+            lastScreen.save(LemonScreen::class.java.canonicalName)
         }
     }
 }

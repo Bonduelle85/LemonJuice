@@ -5,6 +5,8 @@ import android.view.View
 import com.example.lemonjuice.LemonJuiceApp
 import com.example.lemonjuice.R
 import com.example.lemonjuice.presentation.core.AbstractFragment
+import com.example.lemonjuice.presentation.core.ManageViewModels
+import com.example.lemonjuice.presentation.tree.TreeViewModel
 
 class GlassFragment : AbstractFragment(
     imageResId = R.drawable.ic_empty_glass,
@@ -16,10 +18,11 @@ class GlassFragment : AbstractFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = (requireActivity().application as LemonJuiceApp).viewModel
+        val manageViewModels = activity as ManageViewModels
+        val viewModel = manageViewModels.viewModel(GlassViewModel::class.java)
+        viewModel.init()
 
         binding.actionButton.setOnClickListener {
-            viewModel.goAgain()
             (requireActivity() as GlassNavigation).navigateToTree()
         }
     }

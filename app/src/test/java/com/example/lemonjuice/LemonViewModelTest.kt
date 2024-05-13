@@ -1,7 +1,7 @@
 package com.example.lemonjuice
 
-import com.example.lemonjuice.data.Repository
-import com.example.lemonjuice.presentation.GameViewModel
+import com.example.lemonjuice.data.LemonRepository
+import com.example.lemonjuice.presentation.lemon.LemonViewModel
 import com.example.lemonjuice.presentation.lemon.LemonUiState
 import com.example.lemonjuice.views.button.ActionButtonUiState
 import com.example.lemonjuice.views.image.ActionImageButtonUiState
@@ -11,16 +11,16 @@ import org.junit.Before
 import org.junit.Test
 
 
-class GameViewModelTest {
+class LemonViewModelTest {
 
-    private lateinit var viewModel: GameViewModel
-    private lateinit var repository: FakeRepository
+    private lateinit var viewModel: LemonViewModel
+    private lateinit var repository: FakeLemonRepository
 
     @Before
     fun setup() {
-        repository = FakeRepository()
-        viewModel = GameViewModel(
-            repository = repository
+        repository = FakeLemonRepository()
+        viewModel = LemonViewModel(
+            lemonRepository = repository
         )
     }
 
@@ -99,7 +99,7 @@ class GameViewModelTest {
         )
         assertEquals(expectedLemonUiState, actualLemonUiState)
 
-        actualLemonUiState = viewModel.goAgain() // Tree
+        actualLemonUiState = viewModel.resetCounter() // Tree
         expectedLemonUiState = LemonUiState.Tree(
             actionImageButtonUiState = ActionImageButtonUiState.Tree,
             actionButtonUiState = ActionButtonUiState.Tree,
@@ -109,7 +109,7 @@ class GameViewModelTest {
     }
 }
 
-private class FakeRepository : Repository {
+private class FakeLemonRepository : LemonRepository {
 
     private var clickCounter = 0
 

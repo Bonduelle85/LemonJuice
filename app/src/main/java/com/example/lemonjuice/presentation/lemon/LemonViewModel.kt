@@ -1,16 +1,17 @@
-package com.example.lemonjuice.presentation
+package com.example.lemonjuice.presentation.lemon
 
-import com.example.lemonjuice.data.Repository
-import com.example.lemonjuice.presentation.lemon.LemonUiState
+import com.example.lemonjuice.data.LemonRepository
+import com.example.lemonjuice.presentation.main.MyViewModel
 import com.example.lemonjuice.views.button.ActionButtonUiState
 import com.example.lemonjuice.views.image.ActionImageButtonUiState
 import com.example.lemonjuice.views.text.HintTextViewUiState
 
-class GameViewModel(
-    private val repository: Repository
-) : Actions {
+class LemonViewModel(
+    private val lemonRepository: LemonRepository
+) : MyViewModel, Actions {
 
     fun init(): LemonUiState {
+        lemonRepository.saveLastScreenIsLemon()
         return LemonUiState.LemonBefore(
             actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
             actionButtonUiState = ActionButtonUiState.LemonBefore,
@@ -19,14 +20,16 @@ class GameViewModel(
     }
 
     fun handleImageButton(): LemonUiState {
-        repository.increment()
-        return if (repository.isLast()) {
+        lemonRepository.increment()
+        return if (lemonRepository.isLast()) {
+            lemonRepository.saveLastScreenIsLemon()
             LemonUiState.LemonAfter(
                 actionImageButtonUiState = ActionImageButtonUiState.LemonAfter,
                 actionButtonUiState = ActionButtonUiState.LemonAfter,
                 hintTextViewUiState = HintTextViewUiState.LemonAfter,
             )
         } else {
+            lemonRepository.saveLastScreenIsLemon() // init()
             LemonUiState.LemonBefore(
                 actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
                 actionButtonUiState = ActionButtonUiState.LemonBefore,
@@ -43,12 +46,12 @@ class GameViewModel(
         )
     }
 
-    override fun goAgain() {
-        repository.reset()
+    override fun resetCounter() {
+        lemonRepository.reset()
     }
 }
 
 interface Actions {
-    fun goAgain()
+    fun resetCounter()
     fun goLemonBefore(): LemonUiState
 }
