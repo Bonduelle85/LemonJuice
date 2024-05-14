@@ -1,11 +1,11 @@
 package com.example.lemonjuice
 
-import com.example.lemonjuice.data.LemonRepository
-import com.example.lemonjuice.presentation.lemon.LemonViewModel
-import com.example.lemonjuice.presentation.lemon.LemonUiState
-import com.example.lemonjuice.views.button.ActionButtonUiState
-import com.example.lemonjuice.views.image.ActionImageButtonUiState
-import com.example.lemonjuice.views.text.HintTextViewUiState
+import com.example.lemonjuice.lemon.data.LemonRepository
+import com.example.lemonjuice.lemon.presentation.LemonViewModel
+import com.example.lemonjuice.lemon.presentation.LemonUiState
+import com.example.lemonjuice.core.views.button.ActionButtonUiState
+import com.example.lemonjuice.core.views.image.ActionImageButtonUiState
+import com.example.lemonjuice.core.views.text.HintTextViewUiState
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
