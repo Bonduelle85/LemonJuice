@@ -19,14 +19,16 @@ class JuiceFragment : AbstractFragment(
 
         val manageViewModels = activity as ManageViewModels
         val viewModel = manageViewModels.viewModel(JuiceViewModel::class.java)
-        viewModel.init()
+
+        if (savedInstanceState == null) viewModel.init()
 
         binding.actionButton.setOnClickListener {
+            manageViewModels.clear(JuiceViewModel::class.java)
             (requireActivity() as JuiceNavigation).navigateToGlass()
         }
     }
 }
 
-interface JuiceNavigation{
+interface JuiceNavigation {
     fun navigateToGlass()
 }

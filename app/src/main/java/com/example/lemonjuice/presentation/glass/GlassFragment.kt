@@ -20,9 +20,11 @@ class GlassFragment : AbstractFragment(
 
         val manageViewModels = activity as ManageViewModels
         val viewModel = manageViewModels.viewModel(GlassViewModel::class.java)
-        viewModel.init()
+
+        if (savedInstanceState == null) viewModel.init()
 
         binding.actionButton.setOnClickListener {
+            manageViewModels.clear(GlassViewModel::class.java)
             (requireActivity() as GlassNavigation).navigateToTree()
         }
     }

@@ -33,6 +33,7 @@ class LemonFragment : Fragment() {
 
         binding.actionButton.setOnClickListener {
             viewModel.resetCounter()
+            manageViewModels.clear(LemonViewModel::class.java)
             (requireActivity() as LemonNavigation).navigateToJuice()
         }
 
@@ -41,8 +42,10 @@ class LemonFragment : Fragment() {
             lemonUiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
         }
 
-        lemonUiState = viewModel.init()
-        lemonUiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
+        if (savedInstanceState == null) {
+            lemonUiState = viewModel.init()
+            lemonUiState.update(binding.actionImageButton, binding.actionButton, binding.hintTextView)
+        }
     }
 
     override fun onDestroyView() {

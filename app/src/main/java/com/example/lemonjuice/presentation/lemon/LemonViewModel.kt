@@ -29,7 +29,7 @@ class LemonViewModel(
                 hintTextViewUiState = HintTextViewUiState.LemonAfter,
             )
         } else {
-            lemonRepository.saveLastScreenIsLemon() // init()
+            lemonRepository.saveLastScreenIsLemon() // replace - init()
             LemonUiState.LemonBefore(
                 actionImageButtonUiState = ActionImageButtonUiState.LemonBefore,
                 actionButtonUiState = ActionButtonUiState.LemonBefore,

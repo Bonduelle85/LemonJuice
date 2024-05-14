@@ -18,9 +18,11 @@ class TreeFragment : AbstractFragment(
 
         val manageViewModels = activity as ManageViewModels
         val viewModel = manageViewModels.viewModel(TreeViewModel::class.java)
-        viewModel.init()
+
+        if (savedInstanceState == null) viewModel.init()
 
         binding.actionButton.setOnClickListener {
+            manageViewModels.clear(TreeViewModel::class.java)
             (requireActivity() as TreeNavigation).navigateToLemon()
         }
     }
